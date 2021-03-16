@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Alquiler de peliculas</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+		<script>
+			function validarPagina() {
+				$.post("../Controlador/usuarioController.php",
+					{'opcion':'Admin_Or_Client','pagina':'cliente'},respuesta5);
+			}
+			function respuesta5(arg) {
+				if (arg) {
+					document.write('No puede ver este contenido');
+					window.history.back();
+				}
+			}
+			validarPagina();
+		</script>
+	</head>
+<body class="">
+	<nav class="navbar navbar-dark bg-dark p-3">
+		<div class="start">
+			<a class="navbar-brand" href="peliculas.html">PelisUPS</a>
+		</div>
+		<div class="center">
+			<form class="d-flex buscador">
+				<input class="form-control" type="search" placeholder="Buscar peliculas" aria-label="Search">
+				<button class="btn btn-outline-primary mx-2" type="submit">Search</button>
+			</form>
+		</div>
+		<div class="end">
+			<div class="d-flex">
+				<button class="btn btn-outline-success">Help</button>
+				<div class="mx-2">
+					<img src="img peliculas/user.png" width="40" height="40" alt="">
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-2 border border-rigth-dark">
+				<div class="d-flex">
+					<img src="img peliculas/user.png" width="40" height="40" alt="">
+					<p class="align-middle">Mejores Peliculas</p>
+				</div>
+				<hr>
+				<div class="d-flex mt-4">
+					<img src="img peliculas/user.png" width="40" height="40" alt="">
+					<p>Peliculas a Estrenarse</p>
+				</div>
+				<hr>
+				<div class="d-flex  mt-4">
+					<img src="img peliculas/user.png" width="40" height="40" alt="">
+					<p>Mis Favoritos</p>
+				</div>
+				<hr>
+				<div class="d-flex mt-4">
+					<img src="img peliculas/user.png" width="40" height="40" alt="">
+					<p>Generos</p>
+				</div>
+			</div>
+			<div class="col-10 bg-light" id="datos">
+				<div class="row justify-content-center">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type='text/javascript'>
+	$(document).ready(function(){
+        $(window).scroll(function(){
+            if ($(window).scrollTop() == $(document).height() - $(window).height()){
+                alert('scroll')
+            }
+        });
+    });
+	function cargarUsuario(){
+		$.post("../Controlador/usuarioController.php",
+		{'opcion':'consultar'},respuesta2);
+	}
+	function respuesta2(arg)
+	{
+		$("#username").html(arg);
+	}
+	function cargarPeliculas(){
+		$.post("../Controlador/peliculaController.php",
+		{'opcion':'consultar'},respuesta);
+	}
+	function respuesta(arg){
+		$("#datos div").append(arg);
+	}
+	function cerrar(){
+		$.post("../Controlador/usuarioController.php",
+			{'opcion':'close'},respuesta4);
+	}
+	function respuesta4(arg){
+		alert(arg);
+		window.location.href="index.html"
+	}
+
+	function prueba(){
+		$.post("../Controlador/usuarioController.php",
+				{'opcion':'usuario'},respuesta3);
+	}
+	function respuesta3(arg){
+		alert(arg);
+	}
+	window.onload=cargarUsuario();
+	window.onload=cargarPeliculas();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</body>
+</html>

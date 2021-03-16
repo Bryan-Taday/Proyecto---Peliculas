@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler de Peliculas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        function validarPagina() {
+            $.post("../Controlador/usuarioController.php",
+			{'opcion':'Admin_Or_Client','pagina':'admin'},response);
+        }
+        function response(argument) {
+            if (argument) {
+			    window.history.back();
+		    }
+        }
+        window.onload = validarPagina();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="start">
+            <h1>Adminitrador</h1>
+        </div>
+        <div class="end">
+            <h3>Nombre de Administrador</h2>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <hr>
+        <div class="row">
+            <div class="col-3">
+                <div class="my-3">
+                    <a href="administrador-peliculas.html" class="h4">Peliculas</a>
+                </div>
+                <hr>
+                <div class="my-3">
+                    <a href="administrador-clientes.html" class="h4">Clientes</a>
+                </div>
+                <hr>
+                <div class="my-3">
+                    <a href="administrador-detalle.html" class="h4">Detalles de Alquiler</a>
+                </div>
+                <hr>
+                <div class="my-3">
+                    <a href="administrador-total.html" class="h4">Total</a>
+                </div>
+            </div>
+            <div class="col-9 bg-light">
+                <div class="container">
+                    <p class="display-1">Bienvenido...</p>
+                    <hr>
+                    <p class="h3">Selelccione una opcion para modificar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</body>
+</html>

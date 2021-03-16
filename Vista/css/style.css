@@ -1,0 +1,17 @@
+#fondoLogin{
+    background-image: url("../img\ peliculas/fondito.png");
+    
+}
+.contenedor{
+    margin-top: 75px;
+    margin-inline: 300px;
+}
+footer{
+    margin-top: 225px;
+}
+#error{
+   color: red;
+}
+.buscador{
+    width: 700px;
+}

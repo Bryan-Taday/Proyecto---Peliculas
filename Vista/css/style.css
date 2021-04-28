@@ -1,17 +1,46 @@
 #fondoLogin{
-    background-image: url("../img\ peliculas/fondito.png");
-    
+    background-image: url("../img\ peliculas/fondito.png");   
 }
-.contenedor{
+.margin-contenedor{
     margin-top: 75px;
-    margin-inline: 300px;
 }
 footer{
-    margin-top: 225px;
+    margin: 50px;
 }
 #error{
    color: red;
 }
 .buscador{
     width: 700px;
+}
+.main-container{
+    margin: 10px 100px;
+}
+.seccion-izquierda{
+    /* background-color: #EEEEEE; */
+    padding: 0;
+}
+.seccion-derecha{
+    border-left:  1px solid #AAAAAA;;
+}
+.quitar-padding{
+    padding: 0px;
+}
+.quitar-margin{
+    margin: 0px;
+}
+.menu{
+    margin-top: 20px;
+    border-left:  1px solid #AAAAAA;
+}
+.menu ul{
+    list-style: none;
+}
+.opciones{
+    padding: 20px;
+}
+.opciones:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #333333;
 }

@@ -13,14 +13,7 @@ switch($_POST['opcion'])
 	echo $boo;
 	break;
 	case 'consultar':
-		$datos=$objUsuario->ObtenerTodos();
-    foreach($datos as $fila)
-		{
-			if ($fila['Id']==1/*$_SESSION['usuario']*/) {
-				echo $fila['Nombre']." ".$fila['Apellido'];
-				exit;
-			}
-		}
+		echo $_SESSION['usuario'];
 		break;
 	case 'close':
 		session_destroy();

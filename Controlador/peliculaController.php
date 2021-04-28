@@ -9,7 +9,7 @@ switch($_POST['opcion'])
 		$card = "";
 		foreach($datos as $fila)
 		{
-			$card .= "<div class='card m-4' style='width: 18rem;'><img class='card-img-top' src='img peliculas/".$fila['titulo'].".jpg' alt='Card image cap'><div class='card-body'><h5 class='card-title'>".$fila['titulo']."</h5><a href='pelicula.html?Id=".$fila['Id']."' class='btn btn-primary'>Ver mas</a></div></div>";
+			$card .= "<div class='card m-4' style='width: 18rem;'><img class='card-img-top' src='img peliculas/".$fila['titulo'].".jpg' alt='Card image cap'><div class='card-body'><h5 class='card-title'>".$fila['titulo']."</h5><hr><a href='pelicula.html?Id=".$fila['Id']."' class='btn btn-primary w-100'>Ver mas</a></div></div>";
 			$img.= "<a href='pelicula.html?Id=".$fila['Id']."' class='col-3 py-3'><img class='w-100' src='img peliculas/".$fila['titulo'].".jpg' alt='...'></a>";
 		}
 		echo $card;

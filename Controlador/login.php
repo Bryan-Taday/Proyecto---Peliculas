@@ -21,7 +21,7 @@ if( empty($datos) ){
                 exit;
             }else{
                 $_SESSION['id']= $fila['id'];
-                $_SESSION['usuario']= $fila['nombre']+$fila['apellido'];
+                $_SESSION['usuario']= $fila['nombre']." ".$fila['apellido'];
                 $_SESSION['tipo_usuario']= $fila['tipo_usuario'];
                 header("Location: ../Vista/peliculas.html");
                 exit;

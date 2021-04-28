@@ -4,7 +4,7 @@ Class Conexion
 	private $pass="";
 	private $dbcon=null;
 	//private $dns="pgsql:host=localhost:5432;dbname=dbproyecto";
-	private $dns="mysql:host=localhost:3306;dbname=db_proyecto2";
+	private $dns="mysql:host=localhost:3306;dbname=proyecto_pelicula";
 	private $error=null;
 
 	private function conectar()
@@ -158,7 +158,7 @@ Class Conexion
 		{	return "No conecta".$this->error;
 			exit;
 		}
-		$query="select titulo,precio,Id_carrito from persona as p inner join $tabla as c on p.Id=c.id_persona inner join pelicula as pe on c.id_pelicula=pe.Id where p.Id=$filtro";
+		$query="select titulo,precio,Id_carrito from usuario as p inner join $tabla as c on p.Id=c.id_persona inner join pelicula as pe on c.id_pelicula=pe.Id where p.Id=$filtro";
 		$result_set = $this->dbconn->prepare($query);
 		$result_set->execute();
 		$result = $result_set->fetchAll();
